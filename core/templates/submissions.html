@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submissions</title>
+</head>
+<body>
+    <h1>Submissions</h1>
+    {% for submission in submissions %}
+    <div>
+        <h2><a href="{% url 'submission_detail' submission.id %}">{{ submission.title }}</a></h2>
+        <p>{{ submission.abstract }}</p>
+        <p>Submitted by: {{ submission.author }}</p>
+        <p>Contact: {{ submission.contact_email }}, {{ submission.contact_phone }}</p>
+        <p>Submitted at: {{ submission.submitted_at }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

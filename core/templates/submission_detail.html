@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{% block content %}
+    <h2>{{ submission.title }}</h2>
+    <p>Submitted by: {{ submission.author }}</p>
+    <p>{{ submission.content }}</p>
+
+    <form action="{% url 'assign_reviewer' submission.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Assign a Reviewer">
+    </form>
+{% endblock %}
+</html>

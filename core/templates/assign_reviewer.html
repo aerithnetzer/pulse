@@ -1,0 +1,11 @@
+{% block content %}
+    <h2>Assign Reviewer for Submission: {{ submission.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Reviewer Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Reviewer Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <input type="submit" value="Assign">
+    </form>
+{% endblock %}

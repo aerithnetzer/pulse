@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'hero.css' %}">
+
+</head>
+    <nav>
+        <div class="navbar-left">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/submit">Add a Work</a></li>
+            <li><a href="/">Delete All Works</a></li>
+            <li><a href="/login">Login</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+        </div>
+    <div class="navbar-right">
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}</p>
+        {% else %}
+            <p>Guest</p>
+        {% endif %}
+    </div>
+    </nav>
+</html>
